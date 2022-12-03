@@ -86,7 +86,7 @@ function App() {
                         players.length < 6 && (
                             <div>
                                 <p>Dodaj gracza</p>
-                                <input value={playerName} onChange={(e) => setPlayerName(e.target.value)}/>
+                                <input maxLength={12} value={playerName} onChange={(e) => setPlayerName(e.target.value)}/>
 
                                 <button onClick={handleAddPlayer}>Dodaj</button>
                             </div>
