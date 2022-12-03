@@ -68,29 +68,33 @@ function App() {
     return (
         <div className="app">
             {view === 'selectPlayer' && (
-                <div>
+                <div className='selectPlayer-view'>
                     <h1>Games Timer <span className='version-number'>v {version.version}</span></h1>
-                    <p>Gracze</p>
-                    {players.map(player => (<div>
-                        <p>{player.name}</p>
-                        <select value={player.color} onChange={(e) => handleColorChange(e, player.number)}>
-                            <option value='blue'>Niebieski</option>
-                            <option value='red'>Czerwony</option>
-                            <option value='green'>Zielony</option>
-                            <option value='pink'>Różowy</option>
-                            <option value='white'>Biały</option>
-                            <option value='yellow'>Żółty</option>
-                        </select>
-                        <button onClick={() => handleRemovePLayer(player.number)}>Usuń</button>
-                    </div>))}
-
+                    <p style={{marginBottom: 12}}>Gracze</p>
+                    {players.map((player, index) => (
+                        <div className='player'>
+                            <span className='number'>{index + 1}</span>
+                            <span className='name'>{player.name}</span>
+                            <div>
+                                <select value={player.color} onChange={(e) => handleColorChange(e, player.number)}>
+                                    <option value='blue'>Niebieski</option>
+                                    <option value='red'>Czerwony</option>
+                                    <option value='green'>Zielony</option>
+                                    <option value='pink'>Różowy</option>
+                                    <option value='white'>Biały</option>
+                                    <option value='yellow'>Żółty</option>
+                                </select>
+                                <button className='deleteButton' onClick={() => handleRemovePLayer(player.number)}>Usuń</button>
+                            </div>
+                        </div>
+                    ))}
                     {
                         players.length < 6 && (
-                            <div>
+                            <div style={{marginBottom: 8}}>
                                 <p>Dodaj gracza</p>
                                 <input maxLength={12} value={playerName} onChange={(e) => setPlayerName(e.target.value)}/>
 
-                                <button onClick={handleAddPlayer}>Dodaj</button>
+                                <button style={{marginLeft: 8}} onClick={handleAddPlayer}>Dodaj</button>
                             </div>
                         )
                     }
@@ -99,7 +103,7 @@ function App() {
                     <p>Czas na ruch (s)</p>
                     <input min={5} max={600} type='number' value={moveTime} onChange={handleChangeTime}/>
 
-                    <button disabled={players.length < 2} onClick={() => setView('timer')}>Start</button>
+                    <button style={{marginLeft: 8}} disabled={players.length < 2} onClick={() => setView('timer')}>Start</button>
                 </div>
             )}
 

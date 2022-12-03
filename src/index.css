@@ -19,6 +19,10 @@ body {
   align-items: center;
 }
 
+.selectPlayer-view {
+  padding: 8px;
+}
+
 .timer-view p {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -75,4 +79,24 @@ p {
 
 .version-number {
   font-size: 18px;
+}
+
+.player {
+  margin-left: 6px;
+  margin-bottom: 16px;
+  width: 82vw;
+  display: flex;
+}
+
+.player .number {
+  width: 5vw;
+}
+
+.player .name {
+  width: 40vw;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+.deleteButton {
+  margin-left: 6px;
 }
