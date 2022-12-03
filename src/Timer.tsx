@@ -18,11 +18,14 @@ export const Timer = ({defaultSeconds, players, onClose}: Props) => {
     const [playTick, { stop: stopTick }] = useSound(tick);
 
     const handleResetTime = useCallback(() => {
+        if(secondsLeft + 1 >= defaultSeconds) {
+            return
+        }
         playBeep1()
         setSecondsLeft(defaultSeconds)
         const nextPlayer = currentPlayer === (players.length - 1) ? 0 : currentPlayer + 1
         setCurrentPlayer(nextPlayer)
-    }, [currentPlayer, defaultSeconds, playBeep1, players.length])
+    }, [currentPlayer, defaultSeconds, playBeep1, players.length, secondsLeft])
 
     useEffect(() => {
         if (secondsLeft <= 5) {

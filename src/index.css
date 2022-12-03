@@ -61,3 +61,7 @@ p {
   bottom: 10px;
   right: 10px;
 }
+
+.version-number {
+  font-size: 18px;
+}

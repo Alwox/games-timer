@@ -62,7 +62,7 @@ function App() {
         <div className="app">
             {view === 'selectPlayer' && (
                 <div>
-                    <h1>Games Timer <span>v {version.version}</span></h1>
+                    <h1>Games Timer <span className='version-number'>v {version.version}</span></h1>
                     <p>Gracze</p>
                     {players.map(player => (<div>
                         <p>{player.name}</p>
