@@ -58,6 +58,11 @@ function App() {
         setPlayers(newPlayers)
     }
 
+    const handleChangeTime = (e:any) => {
+        const newTime = Number(e.target.value)
+        setMoveTime(newTime < 5 ? 5 : newTime)
+    }
+
     return (
         <div className="app">
             {view === 'selectPlayer' && (
@@ -90,7 +95,7 @@ function App() {
 
 
                     <p>Czas na ruch (s)</p>
-                    <input type='number' value={moveTime} onChange={(e) => setMoveTime(Number(e.target.value))}/>
+                    <input min={5} max={600} type='number' value={moveTime} onChange={handleChangeTime}/>
 
                     <button onClick={() => setView('timer')}>Start</button>
                 </div>
@@ -104,12 +109,3 @@ function App() {
 }
 
 export default App;
-
-// [
-//     {name: 'Janusz', color: 'red'},
-//     {name: 'Andżej', color: 'blue'},
-//     {name: 'Bożenka', color: 'green'},
-//     {name: 'Długie imi 1', color: 'yellow'},
-//     {name: 'Długie imi 2', color: 'pink'},
-//     {name: 'Długie imi 3', color: 'white'},
-// ]
