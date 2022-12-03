@@ -58,7 +58,7 @@ function App() {
         setPlayers(newPlayers)
     }
 
-    const handleChangeTime = (e:any) => {
+    const handleChangeTime = (e: any) => {
         const newTime = Number(e.target.value)
         setMoveTime(newTime < 5 ? 5 : newTime)
     }
