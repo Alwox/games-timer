@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/games-timer/static/css/main.d4bddebe.css",
-    "main.js": "/games-timer/static/js/main.8d023023.js",
+    "main.css": "/games-timer/static/css/main.a11c01e6.css",
+    "main.js": "/games-timer/static/js/main.c549e41c.js",
     "static/js/845.01c96a72.chunk.js": "/games-timer/static/js/845.01c96a72.chunk.js",
     "static/js/787.59f51db6.chunk.js": "/games-timer/static/js/787.59f51db6.chunk.js",
     "service-worker.js": "/games-timer/service-worker.js",
@@ -9,13 +9,13 @@
     "static/media/tick.mp3": "/games-timer/static/media/tick.6b6e1e54cc2443c8bd42.mp3",
     "static/media/close.svg": "/games-timer/static/media/close.8367faddf196ea284adf5267d52a752c.svg",
     "index.html": "/games-timer/index.html",
-    "main.d4bddebe.css.map": "/games-timer/static/css/main.d4bddebe.css.map",
-    "main.8d023023.js.map": "/games-timer/static/js/main.8d023023.js.map",
+    "main.a11c01e6.css.map": "/games-timer/static/css/main.a11c01e6.css.map",
+    "main.c549e41c.js.map": "/games-timer/static/js/main.c549e41c.js.map",
     "845.01c96a72.chunk.js.map": "/games-timer/static/js/845.01c96a72.chunk.js.map",
     "787.59f51db6.chunk.js.map": "/games-timer/static/js/787.59f51db6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4bddebe.css",
-    "static/js/main.8d023023.js"
+    "static/css/main.a11c01e6.css",
+    "static/js/main.c549e41c.js"
   ]
 }
