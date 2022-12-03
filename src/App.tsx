@@ -1,6 +1,8 @@
 import React from 'react';
 import {Timer} from "./Timer";
 
+import {useLocalStorage} from "./useLocalStorage";
+
 const version = require('../package.json')
 
 type Views = 'selectPlayer' | 'timer'
@@ -15,8 +17,8 @@ export interface Player {
 
 function App() {
     const [view, setView] = React.useState<Views>('selectPlayer')
-    const [moveTime, setMoveTime] = React.useState(60)
-    const [players, setPlayers] = React.useState<Player[]>([])
+    const [moveTime, setMoveTime] = useLocalStorage('time', 60)
+    const [players, setPlayers] = useLocalStorage<Player[]>('players', [])
     const [playerName, setPlayerName] = React.useState('')
 
     const handleAddPlayer = () => {
@@ -97,7 +99,7 @@ function App() {
                     <p>Czas na ruch (s)</p>
                     <input min={5} max={600} type='number' value={moveTime} onChange={handleChangeTime}/>
 
-                    <button onClick={() => setView('timer')}>Start</button>
+                    <button disabled={players.length < 2} onClick={() => setView('timer')}>Start</button>
                 </div>
             )}
 
