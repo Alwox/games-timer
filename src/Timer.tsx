@@ -3,18 +3,15 @@ import useSound from 'use-sound';
 
 import beep1 from './sounds/beep-1.mp3';
 import tick from './sounds/tick.mp3';
-
-interface Player {
-    name: string
-    color: string
-}
+import {Player} from "./App";
 
 interface Props {
     defaultSeconds: number
     players: Player[]
+    onClose: () => void
 }
 
-export const Timer = ({defaultSeconds, players}: Props) => {
+export const Timer = ({defaultSeconds, players, onClose}: Props) => {
     const [secondsLeft, setSecondsLeft] = useState(defaultSeconds)
     const [currentPlayer, setCurrentPlayer] = useState(0)
     const [playBeep1] = useSound(beep1);
@@ -49,6 +46,7 @@ export const Timer = ({defaultSeconds, players}: Props) => {
         <div className={`timer-view ${player.color}`} onClick={handleResetTime}>
             <p className='player-name'>{player.name}</p>
             <p className='timer'>{secondsLeft}</p>
+                <button className="closeButton" onClick={onClose}>X</button>
         </div>
     )
 }
