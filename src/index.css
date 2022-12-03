@@ -84,7 +84,6 @@ p {
 .player {
   margin-left: 6px;
   margin-bottom: 16px;
-  width: 82vw;
   display: flex;
 }
 
@@ -93,7 +92,7 @@ p {
 }
 
 .player .name {
-  width: 40vw;
+  width: 36vw;
   border-bottom: 1px solid #8d8d8d;
 }
 

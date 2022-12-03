@@ -65,6 +65,12 @@ function App() {
         setMoveTime(newTime < 5 ? 5 : newTime)
     }
 
+    const handleSetAsFirst = (number: PlayerNumber) => {
+        const playersCopy = [...players]
+
+        setPlayers(playersCopy.sort((a, b) => (a.number === number && -1) || (b.number === number && 1) || 0))
+    }
+
     return (
         <div className="app">
             {view === 'selectPlayer' && (
@@ -84,6 +90,7 @@ function App() {
                                     <option value='white'>Biały</option>
                                     <option value='yellow'>Żółty</option>
                                 </select>
+                                <button className='deleteButton' onClick={() => handleSetAsFirst(player.number)}>^</button>
                                 <button className='deleteButton' onClick={() => handleRemovePLayer(player.number)}>Usuń</button>
                             </div>
                         </div>
@@ -92,7 +99,7 @@ function App() {
                         players.length < 6 && (
                             <div style={{marginBottom: 8}}>
                                 <p>Dodaj gracza</p>
-                                <input maxLength={12} value={playerName} onChange={(e) => setPlayerName(e.target.value)}/>
+                                <input maxLength={10} value={playerName} onChange={(e) => setPlayerName(e.target.value)}/>
 
                                 <button style={{marginLeft: 8}} onClick={handleAddPlayer}>Dodaj</button>
                             </div>
